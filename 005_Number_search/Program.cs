@@ -11,13 +11,13 @@ void End(bool meaning, int numb, int pos)
 int RequestedNumber(int number, int index)
 {
     int outNum = 0;
-    int divider = 0;
+    int determinant = 0;
 
-    if (index == 1) divider = 10;
-    if (index == 2) divider = 100;
-    if (index == 3) divider = 1000;
+    if (index == 1) determinant = 10;
+    if (index == 2) determinant = 100;
+    if (index == 3) determinant = 1000;
 
-    for (int i = divider; number > i;) number /= 10;
+    while(number > determinant) number /= 10;
     outNum = number % 10;
     return outNum;
 }
