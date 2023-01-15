@@ -54,6 +54,17 @@ int SumDigitsInNumber(int number, bool choice)
     byte flag = 0;
     sbyte value = 0;
     int sum = 0;
+
+    if(number > 0)
+    {
+        while(number > 0)
+        {
+            sum += number % 10;
+            number /= 10;
+        }
+        return sum;
+    }
+
     while (true)
     {
         if (!choice && number != 0)
@@ -141,7 +152,11 @@ System.Console.WriteLine("The sum of the digits in a number!");
 System.Console.WriteLine();
 
 userNumber = GetNumber("Enter number: ");
-bool choice = CheckingForNegativeNumbers();
+
+bool choice = false;
+if(userNumber < 0)
+    choice = CheckingForNegativeNumbers();
+
 outValue = SumDigitsInNumber(userNumber, choice);
 
 System.Console.WriteLine();
