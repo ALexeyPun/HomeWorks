@@ -43,6 +43,12 @@ void Print(double x, double y)
     System.Console.WriteLine($"Точка пересечения: x = {x}; y = {y}.");
 }
 
+Console.Clear();
+System.Console.WriteLine("Alexey Panshin's homework!");
+System.Console.WriteLine();
+System.Console.WriteLine("Task 43.");
+System.Console.WriteLine("Напишите программу, которая найдёт точку пересечения двух прямых.");
+System.Console.WriteLine();
 
 double b1 = GetNumber("Введите точку B1: ");
 double k1 = GetNumber("Введите точку K1: ");
