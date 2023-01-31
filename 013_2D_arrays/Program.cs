@@ -95,6 +95,23 @@ PrintArray(array);
 Console.WriteLine();
 Console.ReadKey();
 
+int temp = 0;
+for (int i = 0, j = 0; i < array.GetLength(0); i++, j++)
+{
+    for (int k = i + 1; k < array.GetLength(0); k++)
+    {
+        if (i + k < array.GetLength(0) || j + k < array.GetLength(0))
+        {
+            temp = array[i, j + k];
+            array[i, j + k] = array[i + k, j];
+            array[i + k, j] = temp;
+        }
+    }
+}
+
+PrintArray(array);
+
+
 
 
 // Задача 50. Напишите программу, которая на вход принимает позиции элемента в двумерном массиве,
@@ -105,24 +122,24 @@ Console.ReadKey();
 // 8 4 2 4
 // 17 -> такого числа в массиве нет
 
-Console.Clear();
-Console.WriteLine("Task 50");
-Console.WriteLine("Проверка позиции элемента.");
-Console.WriteLine();
+// Console.Clear();
+// Console.WriteLine("Task 50");
+// Console.WriteLine("Проверка позиции элемента.");
+// Console.WriteLine();
 
-PrintArray(array);
-Console.WriteLine();
+// PrintArray(array);
+// Console.WriteLine();
 
-string userChoice = string.Empty;
-do
-{
-    IndexCheck(array);
-    Console.WriteLine("Ещё разок?");
-    Console.Write("Введите > YES < для повтора: ");
+// string userChoice = string.Empty;
+// do
+// {
+//     IndexCheck(array);
+//     Console.WriteLine("Ещё разок?");
+//     Console.Write("Введите > YES < для повтора: ");
 
-} while (Console.ReadLine().ToLower() == "yes");
+// } while (Console.ReadLine().ToLower() == "yes");
 
-Console.WriteLine();
+// Console.WriteLine();
 
 
 // Задача 52. Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
@@ -132,15 +149,15 @@ Console.WriteLine();
 // 8 4 2 4
 // Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
 
-Console.Clear();
-Console.Clear();
-Console.WriteLine("Task 52");
-Console.WriteLine("Найдите среднее арифметическое элементов в каждом столбце.");
-Console.WriteLine();
+// Console.Clear();
+// Console.Clear();
+// Console.WriteLine("Task 52");
+// Console.WriteLine("Найдите среднее арифметическое элементов в каждом столбце.");
+// Console.WriteLine();
 
-PrintArray(array);
-Console.WriteLine();
+// PrintArray(array);
+// Console.WriteLine();
 
-AverageColumns(array, rows, columns);
-Console.WriteLine();
-Console.ReadKey();
+// AverageColumns(array, rows, columns);
+// Console.WriteLine();
+// Console.ReadKey();
